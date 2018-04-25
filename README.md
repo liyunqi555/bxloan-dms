@@ -1,2 +1,4 @@
-# bxloan-dms
-  A document server which supports the compression of uploaded pictures and the decompression of rar files.
+### 小微贷-文档服务器
+1. 文件上传、批量上传
+2. 文件下载、批量下载
+3. 文件预览

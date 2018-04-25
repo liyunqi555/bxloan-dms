@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<configuration>  
+    <include resource="org/springframework/boot/logging/logback/base.xml"/>
+    <!-- <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%date %level %logger:%line - %msg%n</pattern>
+		</encoder>
+	</appender> -->
+
+	<appender name="rollingFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>logs/bxloan-dms.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>logs/bxloan-dms.%d{yyyy-MM-dd}.log</fileNamePattern>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%date %level %logger:%line - %msg%n</pattern>
+		</encoder>
+	</appender>  
+    <!-- <logger name="com.coamctech.bxloan.dms" level="INFO" additivity="false">  
+        <appender-ref ref="CONSOLE"/>  
+        <appender-ref ref="FILE"/>  
+    </logger> -->
+    <!-- project default level -->
+	<logger name="com.coamctech.bxloan" level="INFO" />
+	<!--log4jdbc -->
+	<logger name="jdbc.sqltiming" level="INFO"/>
+	<logger name="jdbc.sqlonly" level="OFF"/>
+	<logger name="jdbc.connection" level="OFF"/>
+	<logger name="jdbc.resultset" level="OFF"/>
+	<logger name="jdbc.audit" level="OFF"/>
+	<logger name="jdbc.resultsettable" level="OFF"/>
+	
+	<root level="INFO">
+		<!-- <appender-ref ref="console" /> -->
+		<appender-ref ref="rollingFile" />
+	</root>
+ </configuration>  
